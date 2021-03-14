@@ -12,8 +12,8 @@ eval $(minikube docker-env)
 
 docker build -t img-nginx srcs/Nginx
 docker build -t img-mysql srcs/MySQL
-docker build -t img-pmd srcs/phpMyAdmin
-docker build -t img-wp srcs/WordPress
+docker build -t img-phpmyadmin srcs/phpMyAdmin
+docker build -t img-wordpress srcs/WordPress
 docker build -t img-influxdb srcs/InfluxDB
 docker build -t img-ftps srcs/FTPS
 docker build -t img-grafana srcs/Grafana
@@ -27,11 +27,11 @@ kubectl create secret generic -n metallb-system memberlist --from-literal=secret
 
 minikube dashboard &
 
-kubectl apply -f metallb.yaml
-kubectl apply -f nginx.yaml
-kubectl apply -f mysql.yaml
-kubectl apply -f phpmyadmin.yaml
-kubectl apply -f wordpress.yaml
-kubectl apply -f influxdb.yaml
-kubectl apply -f ftps.yaml
-kubectl apply -f grafana.yaml  
+kubectl apply -f srcs/yaml-files/metallb.yaml
+kubectl apply -f srcs/yaml-files/nginx.yaml
+kubectl apply -f srcs/yaml-files/mysql.yaml
+kubectl apply -f srcs/yaml-files/phpmyadmin.yaml
+kubectl apply -f srcs/yaml-files/wordpress.yaml
+kubectl apply -f srcs/yaml-files/influxdb.yaml
+kubectl apply -f srcs/yaml-files/ftps.yaml
+kubectl apply -f srcs/yaml-files/grafana.yaml  

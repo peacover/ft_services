@@ -19,5 +19,6 @@ RUN chmod -R 777 /var/www/phpmyadmin/tmp
 COPY config.inc.php /var/www/phpmyadmin
 
 COPY file.sh /
+COPY livenessprobe.sh /
 
 CMD ["sh", "/file.sh"]

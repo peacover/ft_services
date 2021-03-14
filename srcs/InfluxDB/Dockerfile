@@ -8,4 +8,5 @@ tar xf telegraf-1.17.0_linux_amd64.tar.gz && rm telegraf-1.17.0_linux_amd64.tar.
 COPY telegraf.conf telegraf-1.17.0/usr/bin/
 # COPY influxdb.conf etc/
 COPY file.sh /
+COPY livenessprobe.sh /
 CMD ["sh", "/file.sh"]

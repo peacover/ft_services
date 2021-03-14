@@ -7,5 +7,6 @@ COPY file.sh /
 COPY phpmyadmin.sql ./
 COPY wordpress.sql ./
 COPY mariadb-server.cnf ./
+COPY livenessprobe.sh /
 RUN mv mariadb-server.cnf /etc/my.cnf.d
 CMD ["sh", "/file.sh"]
